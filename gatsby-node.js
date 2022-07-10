@@ -120,11 +120,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       blocktype: String
       heading: String!
-      kicker: String
       subhead: String
       image: HomepageImage
-      text: String
-      links: [HomepageLink]
     }
 
     interface HomepageFeature implements Node & HomepageBlock {
@@ -382,11 +379,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       blocktype: String @blocktype
       heading: String!
-      kicker: String
       subhead: String
       image: HomepageImage @link(from: "image___NODE")
-      text: String
-      links: [HomepageLink] @link(from: "links___NODE")
     }
 
     type ContentfulHomepageFeature implements Node & HomepageBlock & HomepageFeature
